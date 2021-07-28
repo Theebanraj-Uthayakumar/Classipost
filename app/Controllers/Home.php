@@ -95,7 +95,7 @@ class Home extends BaseController
 
 	public function loginControl()
 	{
-		$url = "http://api.vadalli.com/api/token";
+		// $url = "http://api.vadalli.com/api/token";
 		$session = session();
 		$model = new \App\Models\BaseModel();
 		$email = $this->request->getVar('name');
@@ -106,19 +106,22 @@ class Home extends BaseController
 			$verify_pass = password_verify($password, $pass);
 			if ($verify_pass) {
 				$ses_data = [
-					'access_token'       => $data['access_token'],
+					'access_token'   => $data['access_token'],
 					'token_type'     => $data['token_type'],
-					'expires_in'    => $data['expires_in']
+					'expires_in'     => $data['expires_in']
 				];
 				$session->set($ses_data);
-				return redirect()->to('/dashboard');
+				// return redirect()->to('/dashboard');
+				echo "Sucess 1";
 			} else {
 				$session->setFlashdata('msg', 'Wrong Password');
-				return redirect()->to('/login');
+				// return redirect()->to('/login');
+				echo "Error 1";
 			}
 		} else {
 			$session->setFlashdata('msg', 'Username not Found');
-			return redirect()->to('/login');
+			// return redirect()->to('/login');
+			echo "Error 2";
 		}
 	}
 	public function logout()
