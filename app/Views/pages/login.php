@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="form-group search-input-area input-icon-category">
-                        <select id="categories" class="select2">
+                        <select id="categories" class="select2 thuva">
                             <option class="first" value="0">Select Categories</option>
                             <option value="1">Paypal</option>
                             <option value="2">Master Card</option>
